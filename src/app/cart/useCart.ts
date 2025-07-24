@@ -27,13 +27,13 @@ export const useCart = () => {
     total: items[el._id] * el.price.eg,
   }));
   const changedQuantity = useCallback(
-    (id: number, quantity: number) => {
+    (id: string, quantity: number) => {
       dispatch(changeQuantity({ id, quantity }));
     },
     [dispatch]
   );
   const removeProduct = useCallback(
-    (id: number) => {
+    (id: string) => {
       dispatch(removeItem({ id }));
     },
     [dispatch]

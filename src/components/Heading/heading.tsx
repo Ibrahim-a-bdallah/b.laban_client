@@ -7,5 +7,5 @@ const Heading = memo(({ title }: { title: string }) => {
     </h2>
   );
 });
-
+Heading.displayName = "Heading";
 export default Heading;

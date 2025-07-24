@@ -3,6 +3,7 @@ import { RootState } from "@/store/index";
 import axios from "axios";
 import { TProduct } from "@/types";
 import axiosErrorHandler from "@/utils/axiosErrorHandler";
+import { baseUrl } from "@/utils";
 
 type TResponse = TProduct[];
 
@@ -17,7 +18,7 @@ const actGetItems = createAsyncThunk(
     }
     try {
       const prifixIds = itemId.map((el) => `_id=${el}`).join("&");
-      console.log(`http://localhost:3001/products?${prifixIds}`);
+      console.log(`${baseUrl}/products?${prifixIds}`);
       const response = await axios.get<TResponse>(
         `http://localhost:3001/products?${prifixIds}`,
         {

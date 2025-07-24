@@ -69,7 +69,7 @@ export default function ContactPage() {
             transition={{ delay: 0.2 }}
             className="text-lg"
           >
-            We'd love to hear from you
+            We&apos;d love to hear from you
           </motion.p>
         </div>
       </section>

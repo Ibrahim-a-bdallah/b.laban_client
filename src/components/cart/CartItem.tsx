@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
+type TCartProduct = TProduct & { quantity: number; total: number };
 type CartItemsListProps = {
-  products: TProduct[];
+  products: TCartProduct[];
   changeQuantity: (id: string, quantity: number) => void;
   removeProduct: (id: string) => void;
 };

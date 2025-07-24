@@ -90,8 +90,8 @@ export default function AboutPage() {
             </h3>
             <p className="text-gray-600">
               Launched our signature product that revolutionized the market.
-              Ashtouta's unique formula became an instant bestseller, increasing
-              our revenue by 300%.
+              Ashtouta&apos;s unique formula became an instant bestseller,
+              increasing our revenue by 300%.
             </p>
           </motion.div>
 
@@ -336,9 +336,9 @@ export default function AboutPage() {
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Our Mission</h2>
             <p className="text-lg md:text-xl mb-8">
-              "To preserve Egypt's rich dessert heritage while innovating for
-              modern tastes, using only the finest ingredients to create
-              authentic, high-quality products that bring people together."
+              To preserve Egypt&apos;s rich dessert heritage while innovating
+              for modern tastes, using only the finest ingredients to create
+              authentic, high-quality products that bring people together.
             </p>
             <Link
               href="/shop"
