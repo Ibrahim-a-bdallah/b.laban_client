@@ -20,7 +20,7 @@ const actGetItems = createAsyncThunk(
       const prifixIds = itemId.map((el) => `_id=${el}`).join("&");
       console.log(`${baseUrl}/products?${prifixIds}`);
       const response = await axios.get<TResponse>(
-        `http://localhost:3001/products?${prifixIds}`,
+        `${baseUrl}/products?${prifixIds}`,
         {
           signal,
         }

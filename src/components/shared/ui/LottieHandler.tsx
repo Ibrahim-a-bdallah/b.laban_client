@@ -25,13 +25,13 @@ type TProps = {
 
 const LottieHandler = ({ message, type, styled, cssStyle }: TProps) => {
   return (
-    <div className="d-flex justify-content-center align-items-center flex-column ">
+    <div className="flex justify-center items-center flex-col ">
       <Lottie
         className={`${styled}`}
         animationData={lottieType[type]}
         style={cssStyle ?? { width: "300px" }}
       />
-      <p>{message}</p>;
+      <p>{message}</p>
     </div>
   );
 };

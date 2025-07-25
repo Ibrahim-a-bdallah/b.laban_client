@@ -9,7 +9,8 @@ const actGetProductById = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const response = await axios.get(`${baseUrl}/products?_id=${id}`);
-      return response.data.product || response.data;
+      console.log(response.data[0]);
+      return response.data[0];
     } catch (error) {
       return rejectWithValue(axiosErrorHandler(error));
     }

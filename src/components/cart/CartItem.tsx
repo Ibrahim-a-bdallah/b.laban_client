@@ -18,7 +18,7 @@ const CartItemsList = ({
   removeProduct,
 }: CartItemsListProps) => {
   return (
-    <div className="space-y-4">
+    <div className="container mx-auto mb-3 space-y-4">
       {products.map((item) => (
         <div
           key={item._id}
@@ -46,9 +46,9 @@ const CartItemsList = ({
               <Minus className="h-4 w-4" />
             </Button>
             <Input
-              type="number"
+              type="text"
               value={item.quantity}
-              onChange={(e) => changeQuantity(item._id, +e.target.value)}
+              // onChange={(e) => changeQuantity(item._id, +e.target.value)}
               className="w-12 text-center"
               min="1"
             />

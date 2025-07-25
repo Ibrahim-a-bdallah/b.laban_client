@@ -5,6 +5,7 @@ import { TProduct } from "@/types";
 import Image from "next/image";
 import { addtocart } from "@/store/Cart/CartSlice";
 import { ImSpinner } from "react-icons/im";
+import { closePopup } from "@/store/popBob/popBobSlice";
 
 const ProductDetails = ({ product }: { product: TProduct }) => {
   const dispatch = useAppDispatch();
@@ -14,7 +15,6 @@ const ProductDetails = ({ product }: { product: TProduct }) => {
   const [hearticon, setheart] = useState(true);
   const [disableBtn, setdisableBtn] = useState(false);
 
-  // حل مشكلة undefined.en
   const title = product?.title?.en || "Untitled Product";
   const description = product?.description?.en || "No description available";
   const price = product?.price?.eg?.toFixed(2) || "0.00";
@@ -23,6 +23,7 @@ const ProductDetails = ({ product }: { product: TProduct }) => {
     if (quantity > 0) {
       setdisableBtn(true);
       dispatch(addtocart(product._id));
+      dispatch(closePopup());
     }
   };
 
@@ -36,9 +37,8 @@ const ProductDetails = ({ product }: { product: TProduct }) => {
     return () => clearTimeout(debounc);
   }, [disableBtn]);
 
-  // حل مشكلة الصور الفارغة
   const heartIconSrc = hearticon ? "/heart.svg" : "/heart-svgrepo-com.svg";
-  const fallbackHeartIcon = "/default-heart.svg"; // يجب إضافة صورة افتراضية
+  const fallbackHeartIcon = "/default-heart.svg";
 
   return (
     <div className="w-full flex flex-col gap-2 md:max-h-[400px]">
@@ -96,7 +96,7 @@ const ProductDetails = ({ product }: { product: TProduct }) => {
         >
           {disableBtn ? (
             <div className="flex justify-center items-center gap-2">
-              <ImSpinner className="w-30 h-30 animate-spin" /> loading...
+              <ImSpinner className="w-5 h-5 animate-spin " /> loading...
             </div>
           ) : (
             "Add to Cart"

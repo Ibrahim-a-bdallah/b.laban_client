@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { AlignJustify, ShoppingCart, User } from "lucide-react";
 import SideMenu from "./SideMenu";
@@ -6,16 +7,21 @@ import { useState, useEffect } from "react";
 import Navigation from "../Navigation";
 import UserIcon from "../UserIcon";
 import Link from "next/link";
+import { useAppSelector } from "@/store/hook";
 
 const Header = () => {
   const [open, setopen] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("up");
-  const [cartItemsCount, setCartItemsCount] = useState(0); // يمكنك استبدال هذا بقيمة حقيقية من السياق
+  const [cartItemsCount, setCartItemsCount] = useState(0);
+  const { items } = useAppSelector((state) => state.cart);
 
   const handleClick = () => {
     setopen(!open);
   };
-
+  useEffect(() => {
+    const qount = Object.values(items).reduce((sum, value) => sum + value, 0);
+    setCartItemsCount(qount);
+  }, [items]);
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
 
@@ -30,9 +36,6 @@ const Header = () => {
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
     };
-
-    // يمكنك جلب عدد المنتجات في العربة هنا
-    // مثال: setCartItemsCount(getCartItemsCount());
 
     window.addEventListener("scroll", updateScrollDirection);
     return () => {
@@ -73,7 +76,7 @@ const Header = () => {
           <Link href="/cart" className="relative" aria-label="Shopping cart">
             <ShoppingCart className="text-gray-800" />
             {cartItemsCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 {cartItemsCount}
               </span>
             )}
