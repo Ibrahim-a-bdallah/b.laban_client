@@ -36,7 +36,7 @@ const SideMenu = ({
             <DrawerClose className=" text-2xl cursor-pointer  ">x</DrawerClose>
           </div>
         </DrawerHeader>
-        <Navigation />
+        <Navigation onLinkClick={() => onOpenChange(false)} />
       </DrawerContent>
     </Drawer>
   );

@@ -4,6 +4,7 @@ import SubTotal from "@/components/cart/SubTotal";
 import LottieHandler from "@/components/shared/ui/LottieHandler";
 import { useCart } from "./useCart";
 import CartItemsList from "@/components/cart/CartItem";
+import { Button } from "@/components/ui/button";
 
 const Cart = () => {
   const { products, total, removeProduct, changedQuantity, error, loading } =
@@ -22,8 +23,11 @@ const Cart = () => {
             changeQuantity={changedQuantity}
             removeProduct={removeProduct}
           />
-          <SubTotal total={total} />
-          {/* <CheckOut total={total} /> */}
+          <div className="flex justify-between items-center">
+            <SubTotal total={total} />
+            {/* <CheckOut total={total} /> */}
+            <Button className="btn-primary cursor-pointer">CheckOut</Button>
+          </div>
         </div>
       ) : (
         <LottieHandler type="empty" message="Your Cart is Empty" />

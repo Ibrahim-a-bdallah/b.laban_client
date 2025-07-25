@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { AlignJustify, ShoppingCart, User } from "lucide-react";
+import { AlignJustify, ShoppingCart } from "lucide-react";
 import SideMenu from "./SideMenu";
 import { useState, useEffect } from "react";
 import Navigation from "../Navigation";

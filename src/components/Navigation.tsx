@@ -10,7 +10,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
-const Navigation = () => {
+const Navigation = ({ onLinkClick }: { onLinkClick?: () => void }) => {
   return (
     <NavigationMenu viewport={false} className="flex-[0]">
       <NavigationMenuList className="flex-col md:flex-row">
@@ -21,7 +21,12 @@ const Navigation = () => {
           { href: "/contact", title: "Contact" },
         ].map((item) => (
           <NavigationMenuItem key={item.href}>
-            <Link href={item.href} legacyBehavior passHref>
+            <Link
+              href={item.href}
+              legacyBehavior
+              passHref
+              onClick={onLinkClick}
+            >
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 {item.title}
               </NavigationMenuLink>
