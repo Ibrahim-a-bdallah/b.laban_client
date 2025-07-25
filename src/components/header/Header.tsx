@@ -57,17 +57,19 @@ const Header = () => {
         >
           <AlignJustify className="text-gray-800" />
         </button>
-        <div className="flex justify-center items-center gap-2 flex-1 md:flex-none">
-          <Image
-            src="/B_Laban.jpeg"
-            width={30}
-            height={30}
-            alt="Logo"
-            className="rounded-full"
-            priority
-          />
-          <h2 className="font-bold text-lg">B.Laban</h2>
-        </div>
+        <Link href="/">
+          <div className="flex justify-center items-center gap-2 flex-1 md:flex-none">
+            <Image
+              src="/B_Laban.jpeg"
+              width={30}
+              height={30}
+              alt="Logo"
+              className="rounded-full"
+              priority
+            />
+            <h2 className="font-bold text-lg">B.Laban</h2>
+          </div>
+        </Link>
 
         <div className="hidden md:block">
           <Navigation />

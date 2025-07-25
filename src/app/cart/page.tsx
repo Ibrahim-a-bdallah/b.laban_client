@@ -8,14 +8,14 @@ import CartItemsList from "@/components/cart/CartItem";
 const Cart = () => {
   const { products, total, removeProduct, changedQuantity, error, loading } =
     useCart();
-  console.log(loading);
+
   if (error) return <LottieHandler type={"error"} />;
   return (
     <>
       {loading === "pending" ? (
         <LottieHandler type={"fill"} />
       ) : products.length > 0 ? (
-        <div className="px-3 container mx-auto">
+        <div className="px-3 container mx-auto lg:px-20">
           <Heading title="Cart" />
           <CartItemsList
             products={products}

@@ -26,7 +26,7 @@ const Products = () => {
     return <div className="text-center py-10">No categories found</div>;
 
   return (
-    <div className="container px-4 mx-auto py-6 space-y-6">
+    <div className="container px-4 lg:px-20 mx-auto py-6 space-y-6">
       {records.map((record) => (
         <motion.div
           key={record.name.en}

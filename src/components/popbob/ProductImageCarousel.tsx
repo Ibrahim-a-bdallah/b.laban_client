@@ -13,7 +13,7 @@ const ProductImageCarousel = ({ images }: { images: string[] }) => {
   const handleNext = () => {
     setSelected((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
-  console.log(images);
+
   return (
     <div className="flex gap-4 w-full max-w-4xl mx-auto md:h-[300px]">
       <div className="flex flex-col gap-2">

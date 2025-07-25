@@ -1,18 +1,15 @@
 "use client";
 
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import ProductImageCarousel from "./ProductImageCarousel";
 import ProductDetails from "./ProductDetails";
 import { ImSpinner9 } from "react-icons/im";
 import { useAppDispatch, useAppSelector } from "@/store/hook";
 import { closePopup } from "@/store/popBob/popBobSlice";
-import { TProduct } from "@/types";
 
 const PopBob = () => {
   const dispatch = useAppDispatch();
   const { open, product, loading } = useAppSelector((state) => state.popBob);
-
-  if (product) console.log(product);
 
   return (
     <Dialog

@@ -36,7 +36,7 @@ const CartItemsList = ({
             <h3 className="font-medium">{item.title.en}</h3>
             <p className="text-sm text-gray-500">{item.price.eg} EGP</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-col md:flex-row">
             <Button
               variant="outline"
               size="icon"

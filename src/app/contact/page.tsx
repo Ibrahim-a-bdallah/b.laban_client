@@ -23,7 +23,6 @@ export default function ContactPage() {
   } = useForm<ContactFormData>();
 
   const onSubmit = (data: ContactFormData) => {
-    console.log(data);
     // Add your form submission logic here
   };
 
